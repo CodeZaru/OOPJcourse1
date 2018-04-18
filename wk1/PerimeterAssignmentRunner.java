@@ -6,6 +6,8 @@ public class PerimeterAssignmentRunner {
         // Start with totalPerim = 0
         double totalPerim = 0.0;
         // Start wth prevPt = the last point 
+        //basically creates like a starting point
+        //for the distance method to reference as its implicit 'this' 
         Point prevPt = s.getLastPoint();
         // For each point currPt in the shape,
         for (Point currPt : s.getPoints()) {
@@ -78,8 +80,25 @@ public class PerimeterAssignmentRunner {
     }
 
     public double getLargestPerimeterMultipleFiles() {
-        // Put code here
-        return 0.0;
+        // notes
+        DirectoryResource dr = new DirectoryResource();
+        double largestPerimeterMultipleFiles = 0.0;
+        
+        for(File f : dr.selectedFiles()){
+            //similar to testPerimeter method, except in a for loop so pass in
+            //the individual files from selected array of files
+            FileResource fr = new FileResource(f);
+            //pass the fr instance as arg to Shape constructor
+            //assume that it has the necessary args to 
+            //satisfy Shape constructors method signature
+            Shape s = new Shape(fr);
+            double length = getPerimeter(s);
+            if(length > largestPerimeterMultipleFiles) {
+                largestPerimeterMultipleFiles = length;
+            }
+        }
+            
+        return largestPerimeterMultipleFiles;
     }
 
     public String getFileWithLargestPerimeter() {
