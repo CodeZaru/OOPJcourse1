@@ -130,7 +130,9 @@ public class PerimeterAssignmentRunner {
     }
     
     public void testPerimeterMultipleFiles() {
-        // Put code here
+        // notes
+        double largestPerim = getLargestPerimeterMultipleFiles();
+        System.out.println("The largest permieter from multiple files is: " + largestPerim);
     }
 
     public void testFileWithLargestPerimeter() {
