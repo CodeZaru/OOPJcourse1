@@ -26,6 +26,12 @@ public class Part1 {
         String dna = "";
         String gene = "";
                 
+        dna = "ATCCTATGCTTCGGCTGCTCTAATATGGT";
+        System.out.println("DNA strand is " + dna);
+        gene = findSimpleGene(dna);
+        System.out.println("Gene is " + gene);
+        
+                        
         dna = "ATCCTATGCTTCGGCTGCTCAATATGGT";
         System.out.println("DNA strand is " + dna);
         gene = findSimpleGene(dna);
