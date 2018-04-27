@@ -15,6 +15,10 @@ public class Part1 {
         //returns the empty string, If both exist and substring is multiple of 3, then return substring.
         String result = "";
         int startIndex = dna.indexOf("ATG");
+        if(startIndex == -1)//no ATG
+        {
+            return "";
+        }
         int stopIndex = dna.indexOf("TAA", startIndex+3);
         result = dna.substring(startIndex, stopIndex+3);
         
@@ -26,16 +30,26 @@ public class Part1 {
         String dna = "";
         String gene = "";
                 
-        dna = "ATCCTATGCTTCGGCTGCTCTAATATGGT";
+        dna = "ATCCTATGCTTCGGCTGCTCTAATATGGT";//complete gene
         System.out.println("DNA strand is " + dna);
         gene = findSimpleGene(dna);
         System.out.println("Gene is " + gene);
         
                         
-        dna = "ATCCTATGCTTCGGCTGCTCAATATGGT";
+        dna = "ATCCTATGCTTCGGCTGCTCAATATGGT";//no stopCodon
         System.out.println("DNA strand is " + dna);
         gene = findSimpleGene(dna);
         System.out.println("Gene is " + gene);
+
+                        
+        dna = "ATCCTTGCTTCGGCTGCTCTAATATGGT";//no startCodon
+        System.out.println("DNA strand is " + dna);
+        gene = findSimpleGene(dna);
+        System.out.println("Gene is " + gene);
+    
+    
+    
+    
     }
     
     
