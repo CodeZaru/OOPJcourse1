@@ -27,6 +27,19 @@ public class Part4 {
     }
     
     
+    public void printAllUrls(String url) {
+        URLResource targetUrl = new URLResource(url);
+        for(String line : targetUrl.lines()) {
+          System.out.println(line); 
+            }
+        }
+
+    public void testPrintAllUrls() {
+     printAllUrls("http://www.dukelearntoprogram.com/course2/data/manylinks.html");   
+      
+    }
+            
+        
     
     
 }
