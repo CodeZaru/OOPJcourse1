@@ -24,11 +24,28 @@ public class Part3 {
         return false;
     }
     
+    public String lastPart(String stringa, String stringb) {
+     
+     if(stringb.indexOf(stringa) != -1) {
+     int indexStart = stringb.indexOf(stringa);
+     return stringb.substring(indexStart+stringa.length(), stringb.length());
+         
+        } else {
+        return stringb;
+        }
+        
+    }
+    
+    
+    
     public void testing() {
         
         System.out.println(twoOccurrences("by", "A story by Abby Long"));
         System.out.println(twoOccurrences("a", "banana"));
         System.out.println(twoOccurrences("atg", "ctgtatgta"));
+        
+        System.out.println(lastPart("an", "banana"));
+        System.out.println(lastPart("zoo", "forest"));
         
     }
     
