@@ -2,8 +2,8 @@
 /**
  * Write a description of Part2 here.
  * 
- * @author kevinSullivan 
- * @version 4-27-18
+ * @author (kevinSullivan) 
+ * @version (4-27-18)
  */
 public class Part2 {
     /**
@@ -13,6 +13,15 @@ public class Part2 {
         // Finds the index position of the start/stop codons “ATG”/"TAA. If either is missing, 
         //returns the empty string, If both exist and substring is multiple of 3, then return substring.
         String result = "";
+        
+        if(Character.isUpperCase(dna.charAt(0))){
+            startCodon = startCodon.toUpperCase();
+            stopCodon = stopCodon.toUpperCase();    
+        } else {
+            startCodon = startCodon.toLowerCase();
+            stopCodon = stopCodon.toLowerCase();    
+        }
+        
         int startIndex = dna.indexOf(startCodon);
         if(startIndex == -1)//no startCodon
         {
@@ -53,15 +62,22 @@ public class Part2 {
         gene = findSimpleGene(dna,startCodon,stopCodon);
         System.out.println("Gene is " + gene);
    
+        dna = "ATCCTATTCGGCTGCTCTAT";//neither start nor stop codons exist
+        System.out.println("DNA strand is (neither start/stopCodons exist) " + dna);
+        gene = findSimpleGene(dna,startCodon,stopCodon);
+        System.out.println("Gene is " + gene);
+        
+        dna = "gatgctataat";//lower case
+        System.out.println("DNA strand is (neither start/stopCodons exist) " + dna);
+        gene = findSimpleGene(dna,startCodon,stopCodon);
+        System.out.println("Gene is " + gene);
+        
         dna = "ATCCTATGTTCGGCTGCTCTAATATGGT";//not a multiple of 3
         System.out.println("DNA strand is " + dna);
         gene = findSimpleGene(dna,startCodon,stopCodon);
         System.out.println("Gene is " + gene);
                        
-        dna = "ATCCTATTCGGCTGCTCTAT";//neither start nor stop codons exist
-        System.out.println("DNA strand is (neither start/stopCodons exist) " + dna);
-        gene = findSimpleGene(dna,startCodon,stopCodon);
-        System.out.println("Gene is " + gene);
+
         
     }
     

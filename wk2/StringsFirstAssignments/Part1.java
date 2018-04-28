@@ -2,8 +2,8 @@
 /**
  * Write a description of Part1 here.
  * 
- * @author kevinSullivan 
- * @version 4-27-18
+ * @author (kevinSullivan) 
+ * @version (4-27-18)
  */
 public class Part1 {
     
