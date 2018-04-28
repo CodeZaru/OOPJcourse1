@@ -2,13 +2,13 @@
 /**
  * Write a description of Part1 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author kevinSullivan 
+ * @version 4-27-18
  */
 public class Part1 {
     
     /**
-     *
+     *Programming Exercise: code written from scratch
      */
     public String findSimpleGene(String dna) {
         // Finds the index position of the start/stop codons “ATG”/"TAA. If either is missing, 
@@ -20,8 +20,15 @@ public class Part1 {
             return "";
         }
         int stopIndex = dna.indexOf("TAA", startIndex+3);
+        if(stopIndex == -1)//no TAA
+        {
+         return "";   
+        }
         result = dna.substring(startIndex, stopIndex+3);
-        
+        if(result.length() % 3 != 0)
+        {
+            return "";
+        }
         return result;
     }
 
@@ -34,20 +41,17 @@ public class Part1 {
         System.out.println("DNA strand is " + dna);
         gene = findSimpleGene(dna);
         System.out.println("Gene is " + gene);
-        
-                        
-        dna = "ATCCTATGCTTCGGCTGCTCAATATGGT";//no stopCodon
-        System.out.println("DNA strand is " + dna);
-        gene = findSimpleGene(dna);
-        System.out.println("Gene is " + gene);
-
-                        
+                       
         dna = "ATCCTTGCTTCGGCTGCTCTAATATGGT";//no startCodon
-        System.out.println("DNA strand is " + dna);
+        System.out.println("DNA strand is (no startCodon) " + dna);
         gene = findSimpleGene(dna);
         System.out.println("Gene is " + gene);
     
-    
+        dna = "ATCCTATGCTTCGGCTGCTCAATATGGT";//no stopCodon
+        System.out.println("DNA strand is  (no stopCodon) " + dna);
+        gene = findSimpleGene(dna);
+        System.out.println("Gene is " + gene);
+   
     
     
     }
