@@ -9,7 +9,7 @@ import edu.duke.*;
 
 public class Part4 {
 
-    public void findAndPrintUrls(String url) {
+    public void findWithWordAndPrintUrls(String url) {
         URLResource targetUrl = new URLResource(url);
         for(String word : targetUrl.words()) {
          if(word.toLowerCase().indexOf("youtube.com") != -1) {
@@ -21,10 +21,29 @@ public class Part4 {
         
     }
     
-    public void testFindAndPrintUrls() {
-     findAndPrintUrls("http://www.dukelearntoprogram.com/course2/data/manylinks.html");   
+    public void testFindWithWordAndPrintUrls() {
+     findWithWordAndPrintUrls("http://www.dukelearntoprogram.com/course2/data/manylinks.html");   
       
     }
+
+    public void findWithLineAndPrintUrls(String url) {
+        URLResource targetUrl = new URLResource(url);
+        for(String line : targetUrl.lines()) {
+         if(line.toLowerCase().indexOf("youtube.com") != -1) {
+             //int argIndexEnd = line.indexOf("\"",argIndexStart+1);
+             int argIndexEnd = line.lastIndexOf("\">",line.length());             
+             int argIndexStart = line.lastIndexOf("\"",argIndexEnd-1);
+             System.out.println(line.substring(argIndexStart+1,argIndexEnd)); 
+            }
+        }
+        
+    }
+    
+    public void testFindWithLineAndPrintUrls() {
+     findWithLineAndPrintUrls("http://www.dukelearntoprogram.com/course2/data/manylinks.html");   
+      
+    }
+        
     
     
     public void printAllUrls(String url) {

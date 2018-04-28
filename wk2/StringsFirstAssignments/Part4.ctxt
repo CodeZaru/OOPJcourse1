@@ -1,11 +1,15 @@
 #BlueJ class context
 comment0.target=Part4
 comment1.params=url
-comment1.target=void\ findAndPrintUrls(java.lang.String)
+comment1.target=void\ findWithWordAndPrintUrls(java.lang.String)
 comment2.params=
-comment2.target=void\ testFindAndPrintUrls()
+comment2.target=void\ testFindWithWordAndPrintUrls()
 comment3.params=url
-comment3.target=void\ printAllUrls(java.lang.String)
+comment3.target=void\ findWithLineAndPrintUrls(java.lang.String)
 comment4.params=
-comment4.target=void\ testPrintAllUrls()
-numComments=5
+comment4.target=void\ testFindWithLineAndPrintUrls()
+comment5.params=url
+comment5.target=void\ printAllUrls(java.lang.String)
+comment6.params=
+comment6.target=void\ testPrintAllUrls()
+numComments=7
