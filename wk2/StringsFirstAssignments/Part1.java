@@ -48,7 +48,7 @@ public class Part1 {
         System.out.println("Gene is " + gene);
     
         dna = "ATCCTATGCTTCGGCTGCTCAATATGGT";//no TAA stopCodon
-        System.out.println("DNA strand is  (no stopCodon) " + dna);
+        System.out.println("DNA strand is (no stopCodon) " + dna);
         gene = findSimpleGene(dna);
         System.out.println("Gene is " + gene);
    
@@ -57,7 +57,11 @@ public class Part1 {
         gene = findSimpleGene(dna);
         System.out.println("Gene is " + gene);
                        
-    
+        dna = "ATCCTATTCGGCTGCTCTAT";//neither start nor stop codons exist
+        System.out.println("DNA strand is (neither start/stopCodons exist) " + dna);
+        gene = findSimpleGene(dna);
+        System.out.println("Gene is " + gene);
+        
     }
     
     
