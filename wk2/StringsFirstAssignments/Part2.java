@@ -77,6 +77,10 @@ public class Part2 {
         gene = findSimpleGene(dna,startCodon,stopCodon);
         System.out.println("Gene is " + gene);
                        
+        dna = "AAATGCCCTAACTAGATTAAGAAACC";//PracticeQuiz1 Q1
+        System.out.println("PracticeQuiz1 Q1 DNA strand is " + dna);
+        gene = findSimpleGene(dna,startCodon,stopCodon);
+        System.out.println("PracticeQuiz1 Q1 Gene is " + gene);
 
         
     }
